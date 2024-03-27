@@ -23,4 +23,3 @@
 10. Develop Charts based on Cusines, City, Ratings ( Candidate have to think about new KPI to analyse)
 11. Build a Dashboard for the KPI's Above.
 
-**** KPI are not limited only to above , you can experiment on the other KPI as well.
