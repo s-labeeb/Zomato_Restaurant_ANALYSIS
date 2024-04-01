@@ -32,3 +32,19 @@ EDA involved exploring the restaurant data to answer key questions, such as:
 
 ## Refer to the "Project Objectives.txt" file for more details related questions.
 
+### Results/Findings
+The analysis results are summarized as follows:
+1) There are a total of 9,551 Restaurants
+2) Q3 had higher average ratings.
+3) Only 27% of the Restaurants have online delivery
+4) Only 12% of the Restaurants have table bookings
+5) Average rating given by customers is 2.9
+6) Most Restaurans fall in Low Price Bucket
+7) NPS is -0.08
+
+### Recommendations
+Based on the analysis, following are the recommendations:
+1) More restaurants should include Online delivery service
+2) More restaurants should include Table Booking service
+
+
