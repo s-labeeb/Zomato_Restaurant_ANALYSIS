@@ -4,7 +4,7 @@
 - [Overview](#project-overview)
 - [Data Source](#data-source)
 - [Tools](#tools)
-- [Data Modelling](#project-preparation-modelling)
+- [Data Modelling](#project-modelling)
 - [EDA](#Exploratory-data-analysis)
 - [Findings](#Results/findings)
 - [Recommendations](#recommendations)
@@ -29,7 +29,7 @@ The dataset contains the following worksheets:
 - MySql - Making Report
 
 
-### Data Preparation/Modelling
+### Data Modelling
 In the initial stages of data preparation, performed the following tasks:
 1) Data Loading and Inspection
 2) Data Cleaning and formatting
