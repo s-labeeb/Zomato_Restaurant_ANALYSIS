@@ -4,9 +4,9 @@
 - [Overview](#project-overview)
 - [Data Source](#data-source)
 - [Tools](#tools)
-- [Data Modelling](#project-modelling)
+- [Data Modelling](#Data-modelling)
 - [EDA](#Exploratory-data-analysis)
-- [Findings](#Results/findings)
+- [Findings](#Findings)
 - [Recommendations](#recommendations)
 - [References](#References)
   
@@ -43,7 +43,7 @@ EDA involved exploring the restaurant data to answer key questions, such as:
 
 ## Refer to the "Project Objectives.txt" file for more details related questions.
 
-### Results/Findings
+### Findings
 The analysis results are summarized as follows:
 1) There are a total of 9,551 Restaurants
 2) Q3 had higher average ratings.
