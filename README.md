@@ -1,4 +1,4 @@
-# Zomato_Resturant_ANALYSIS
+# Zomato_Restaurant_ANALYSIS
 
 ## Table of Contents
 - [Overview](#project-overview)
