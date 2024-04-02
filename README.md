@@ -1,11 +1,22 @@
 # Zomato_Resturant_ANALYSIS
 
+## Table of Contents
+- [Overview](#project-overview)
+- [Data Source](#data-sources)
+- [Tools](#tools)
+- [Data Modelling](#project-preparation/modelling)
+- [EDA](#Exploratory-data-analysis)
+- [Findings](#Results/findings)
+- [Recommendations](#recommendations)
+- [References](#References)
+  
+
 
 ### Project Overview
 Analysis of Zomato restaurant data using advanced Excel functions and SQL queries. The project provided valuable insights into restaurant industry trends related to location, opening trends, ratings, and price ranges.
 
 
-### Data Sources/Set
+### Data Source
 The primary dataset used for analysis is the 'zomato.xlsx' file, containing detailed information about the restaurants.
 The dataset contains the following worksheets:
 - Main
@@ -38,13 +49,17 @@ The analysis results are summarized as follows:
 2) Q3 had higher average ratings.
 3) Only 27% of the Restaurants have online delivery
 4) Only 12% of the Restaurants have table bookings
-5) Average rating given by customers is 2.9
-6) Most Restaurans fall in Low Price Bucket
+5) The average rating given by customers is 2.9
+6) Most restaurants fall into Low Price Bucket
 7) NPS is -0.08
 
 ### Recommendations
-Based on the analysis, following are the recommendations:
-1) More restaurants should include Online delivery service
-2) More restaurants should include Table Booking service
+Based on the analysis, the following are the recommendations:
+1) More restaurants should include an Online delivery service
+2) More restaurants should include a Table Booking service
+
+### References
+[Sql Documentation](https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html)
+
 
 
