@@ -2,9 +2,9 @@
 
 ## Table of Contents
 - [Overview](#project-overview)
-- [Data Source](#data-sources)
+- [Data Source](#data-source)
 - [Tools](#tools)
-- [Data Modelling](#project-preparation/modelling)
+- [Data Modelling](#project-preparation-modelling)
 - [EDA](#Exploratory-data-analysis)
 - [Findings](#Results/findings)
 - [Recommendations](#recommendations)
