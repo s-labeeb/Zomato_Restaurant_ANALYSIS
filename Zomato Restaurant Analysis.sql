@@ -45,7 +45,7 @@ Ignore 1 lines;
 #Q Total number of Restaurants
 select count(*) from zomato;
 
-#Q2. Build a Calendar Table using the Columns Datekey_Opening ( Which has Dates from Minimum Dates and Maximum Dates)
+/*Q2. Build a Calendar Table using the Columns Datekey_Opening ( Which has Dates from Minimum Dates and Maximum Dates)
   Add all the below Columns in the Calendar Table using the Formulas.
    A.Year
    B.Monthno
@@ -56,7 +56,7 @@ select count(*) from zomato;
    G.Weekdayname
    H.FinancialMOnth ( April = FM1, May= FM2  …. March = FM12)
    I. Financial Quarter ( Quarters based on Financial Month FQ-1 . FQ-2..)
-   
+   */
 
 create view Date_Table as
 SELECT
@@ -76,46 +76,47 @@ FROM zomato;
 /*
 Q3. Convert the Average cost for 2 columns into USD dollars (currently the Average cost for 2 in local currencies
 */
-SELECT
-    z.Average_Cost_for_two,
-    z.Currency,
-    z.Average_Cost_for_two * e.USD_Rate AS Average_Cost_for_two_USD
-FROM
-    zomata z
-JOIN
-    zomata_sqll e ON z.Currency = e.Currency;
+create view 
+  USD_Cost as 
+select restaurantID,round((z.Average_cost_for_two*u.usd_rate),2) as Cost_USD
+from zomato z
+left join usd_rate u 
+on u.currency=z.currency;
 
 /*
 Q4.Find the Numbers of Restaurants based on City and Country.
 */
-SELECT
-    z.City,
-    s.Countryname,
-    (SELECT COUNT(*) FROM zomata WHERE City = z.City) AS NumRestaurants
-FROM
-    (SELECT DISTINCT City FROM zomata) z
-CROSS JOIN
-    (SELECT DISTINCT Countryname FROM zomata_sql) s
-GROUP BY
-    z.city,
-    s.countryname;
+create view 
+  restaurants_by_city as 
+  select City,count(*) as No_Of_Restaurants from zomato
+	group by city;
+
+create view restaurants_by_country 
+  as select c.CountryName,count(*) as No_Of_Restaurants 
+from zomato z
+left join country c
+on z.countrycode=c.countryID
+	group by c.countryname;
 
 /*
 Q5.Numbers of restaurants opening based on Year, Quarter, Month
 */
-SELECT
-    YEAR(c.DateKey) AS Year,
-    QUARTER(c.DateKey) AS Quarter,
-    MONTH(c.DateKey) AS Month,
-    COUNT(*) AS NumOpenings
-FROM
-    zomata z
-JOIN
-    calendar c ON z.Datekey_Opening = c.DateKey
-GROUP BY
-    YEAR(c.DateKey),
-    QUARTER(c.DateKey),
-    MONTH(c.DateKey);
+#Opening year
+SELECT YEAR(Datekey) AS Year, COUNT(*) AS Yearwise_Restaurants_Opening
+FROM zomato
+GROUP BY YEAR(Datekey);
+
+
+#Opening month
+SELECT Monthname(Datekey) AS Month, COUNT(*) AS Monthwise_Restaurants_Opening
+FROM zomato
+GROUP BY monthname(Datekey);
+
+
+#Opening Quarter
+SELECT Quarter(Datekey) AS Quarter, COUNT(*) AS Quarterwise_Restaurants_Opening
+FROM zomato
+GROUP BY Quarter(Datekey);
 
 /*
 Q6. Count of Restaurants based on Average Ratings
@@ -131,6 +132,7 @@ GROUP BY
 /*
 Q7. Create buckets based on Average Price of reasonable size and find out how many restaurants fall in each bucket
 */
+create view Price_Bucket as
 SELECT
     CASE
         WHEN Average_Cost_for_two <= 20 THEN 'Low'
@@ -147,18 +149,26 @@ GROUP BY
 /*
 Q8.Percentage of Restaurants based on "Has_Table_booking"
 */
-SELECT
-    Has_Table_booking,
-    COUNT(*) AS NumRestaurants,
-    (COUNT(*) / (SELECT COUNT(*) FROM zomato)) * 100 AS Percentage
+create view has_Table_booking as 
+  select has_table_booking, 
+	count(has_table_booking) as No_of_Restaurants,
+    concat(round((count(*)/(select count(*) from zomato)*100),2),'%')
+		as '%_of_Restaurants'
+	from zomato group by has_table_booking;
+    
+-- Alternate approach 
+/* create view Table_booking as SELECT 
+    CONCAT(COUNT(CASE
+                WHEN Has_Table_Booking = 'Yes' THEN 1
+                ELSE NULL
+            END) * 100 / COUNT(*),
+            '%') AS Percentage_With_Table_Booking
 FROM
-    zomato
-GROUP BY
-    Has_Table_booking;
+    zomato; */
+    
 
-/*
-Q9.Percentage of Restaurants based on "Has_Online_delivery"
-*/
+/* Q9.Percentage of Restaurants based on "Has_Online_delivery" */
+
 SELECT
     Has_Online_delivery,
     COUNT(*) AS NumRestaurants,
@@ -169,7 +179,7 @@ GROUP BY
     Has_Online_delivery;
 
 /*
-10. Develop Charts based on Cusines, City, Ratings ( Candidate have to think about new KPI to analyse)
+KPI to analyse)
 */
 -- 1>Cuisines Analysis:
 SELECT Cuisines, COUNT(*) AS NumRestaurants
@@ -189,3 +199,13 @@ LIMIT 10;
 SELECT Rating, COUNT(*) AS NumRestaurants
 FROM zomato
 GROUP BY Rating;
+
+-- VIEWS
+select * from  Date_table;
+select * from USD_Cost;
+select * from restaurants_by_country;
+select * from restaurants_by_city;
+select * from Table_booking;
+select * from Online_delivery;
+select * from Price_Bucket;
+select * from has_table_booking;
