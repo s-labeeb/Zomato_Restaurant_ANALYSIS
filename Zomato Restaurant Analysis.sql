@@ -45,7 +45,7 @@ Ignore 1 lines;
 #Q Total number of Restaurants
 select count(*) from zomato;
 
-/*Q2. Build a Calendar Table using the Columns Datekey_Opening ( Which has Dates from Minimum Dates and Maximum Dates)
+#Q2. Build a Calendar Table using the Columns Datekey_Opening ( Which has Dates from Minimum Dates and Maximum Dates)
   Add all the below Columns in the Calendar Table using the Formulas.
    A.Year
    B.Monthno
@@ -56,7 +56,7 @@ select count(*) from zomato;
    G.Weekdayname
    H.FinancialMOnth ( April = FM1, May= FM2  …. March = FM12)
    I. Financial Quarter ( Quarters based on Financial Month FQ-1 . FQ-2..)
-   */
+   
 
 create view Date_Table as
 SELECT
