@@ -60,6 +60,7 @@ Based on the analysis, the following are the recommendations:
 
 ### References
 [Sql Documentation](https://dev.mysql.com/doc/refman/8.0/en/built-in-function-reference.html)
+
 [Quick Ref](https://quickref.me/mysql)
 
 
