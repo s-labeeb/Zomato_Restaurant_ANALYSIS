@@ -1,7 +1,6 @@
-# Zomato_Restaurant_ANALYSIS
-
 ## Table of Contents
 - [Overview](#project-overview)
+- [Power Bi Dashboard](#Dashboard)
 - [Data Source](#data-source)
 - [Tools](#tools)
 - [Data Modelling](#Data-modelling)
@@ -16,6 +15,18 @@
 Analysis of Zomato restaurant data using advanced Excel functions and SQL queries. The project provided valuable insights into restaurant industry trends related to location, opening trends, ratings, and price ranges.
 
 
+
+
+### Dashboard
+ This is the dynamic dashboard. Also used the drill-through feature which gives more details about a specific country.
+ 
+ To interact with the dashboard follow this link:- 
+ 
+ https://app.powerbi.com/view?r=eyJrIjoiMmQ2MWZmMDAtMjIyMC00NjgxLTljMjctY2ViYjNlMmQ1YzhkIiwidCI6IjYwZWYzNDcyLTc0YzgtNGZmMy04OTg5LTNlYjk2NDgxNmViMiJ9&pageName=ReportSection9ec19691447fcaedab0d
+ 
+![Bi dashboard by (Syeed Labeeb)](https://github.com/s-labeeb/Zomato_Restaurant_ANALYSIS/assets/137295297/ce6a8e94-3046-4307-bea7-49ae9edbc830)
+![Bi Dashboard by (Syeed Labeeb)_2](https://github.com/s-labeeb/Zomato_Restaurant_ANALYSIS/assets/137295297/8c753a7e-030c-49fa-a1ce-b4ec10b11080)
+
 ### Data Source
 The primary dataset used for analysis is the 'zomato.xlsx' file, containing detailed information about the restaurants.
 The dataset contains the following worksheets:
@@ -27,6 +38,7 @@ The dataset contains the following worksheets:
 ### Tools
 - Advanced Excel - Data Modelling/Cleaning, Dashboard making
 - MySql - Making Report
+- Power BI - Dashboard Making, Visual Analysis
 
 
 ### Data Modelling
