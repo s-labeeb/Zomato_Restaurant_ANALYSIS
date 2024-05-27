@@ -168,7 +168,7 @@ FROM
     
 
 /* Q9.Percentage of Restaurants based on "Has_Online_delivery" */
-
+create VIEW Online_delivery as 
 SELECT
     Has_Online_delivery,
     COUNT(*) AS NumRestaurants,
